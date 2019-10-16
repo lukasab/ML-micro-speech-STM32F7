@@ -1,6 +1,6 @@
 # Compilar em um ARM Cortex-M uma rede neural para detectar comandos de voz
 
-O material foi traduzido e desenvolvido com base no [tutorial da arm](https://developer.arm.com/solutions/machine-learning-on-arm/developer-material/how-to-guides/build-arm-cortex-m-voice-assistant-with-google-tensorflow-lite/getting-started).
+O material foi traduzido e desenvolvido com base no [tutorial da ARM](https://developer.arm.com/solutions/machine-learning-on-arm/developer-material/how-to-guides/build-arm-cortex-m-voice-assistant-with-google-tensorflow-lite/getting-started).
 
 O código adquire amostra de áudio do microfone integrado do STM32F7. O áudio passa por uma transformada rápida de Fourier para criar um espectograma. O espectograma é introduzido em um modelo de machine learning pré-treinado. O modelo usa uma rede neural convolucional para identificar se a amostra representa o comando "yes", "no", silêncio, ou desconhecido.
 
@@ -160,9 +160,9 @@ echo 'export PATH="$PATH:~/gcc-arm-none-eabi-8-2019-q3-update/bin"' >> ~/.bash_p
 exec "$SHELL"
 ```
 
-Caso vc use _Zsh_, troque `~/.bash_profile` por `~/.zshenv`
+Caso você use _Zsh_, troque `~/.bash_profile` por `~/.zshenv`
 
-Verifique que tudo deu certo com:
+Verifique que tudo está funcionando corretamente utilizando o comando abaixo:
 
 ```bash
 arm-none-eabi-gcc
@@ -175,9 +175,9 @@ arm-none-eabi-gcc: fatal error: no input files
 compilation terminated.
 ```
 
-### Configure o compilador para o mbed
+### Configure o compilador para o Mbed
 
-Por fim, configure o compilador do mbed com:
+Por fim, configure o compilador do Mbed com:
 
 ```bash
 mbed config -G GCC_ARM_PATH	"~/gcc-arm-none-eabi-8-2019-q3-update/bin/arm-none-eabi-gcc"
@@ -191,7 +191,7 @@ Com o ambiente virtual criado e ativado, clone o repositório do TensorFlow com
 git clone https://github.com/tensorflow/tensorflow.git
 ```
 
-Assim que o projeto for baixado, você pode rodar o seguinte comando para navegar no directório do projeto e buildar ele:
+Assim que o projeto o download for concluído, você pode executar o seguinte comando para navegar no diretório do projeto e buildar ele:
 
 ```bash
 cd tensorflow
@@ -199,13 +199,13 @@ cd tensorflow
 make -f tensorflow/lite/experimental/micro/tools/make/Makefile TARGET=mbed TAGS="disco_f746ng" generate_micro_speech_mbed_project
 ```
 
-Isso vai criar uma pasta em `tensorflow/lite/experimental/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed` contendo o código fonte os arquivos header, os driver Mbed e um README.
+Isso vai criar uma pasta em `tensorflow/lite/experimental/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed` contendo o código fonte, os arquivos header, os driver Mbed e um README.
 
-Aqui tem a descrição de alguns arquivos interessantes:
+No arquivo README há descrições de arquivos interessantes:
 
 - `disco_f746ng/audio_provider.cc` adquire a amostra de áudio do microfone interno.
 - `micro_features/micro_features_generator.cc` usa a transformada rápida de Fourier para criar um espectograma do áudio.
-- `micro_features/tiny_conv_micro_features_model_data.cc` esse arquivo é o modelo de machine learno, representado por um grande array com valores do tipo unsigned char.
+- `micro_features/tiny_conv_micro_features_model_data.cc` esse arquivo é o modelo de machine learning, representado por um grande array com valores do tipo unsigned char.
 - `command_responder.cc` é chamado toda vez que é identificado um potencial commando de voz.
 - `main.cc` esse arquivo é o ponto de entrada do programa Mbed, que roda o modelo de machine learning usando TensorFlow Lite para microcontroladores.
 
@@ -235,9 +235,11 @@ Depois que essas configurações forem atualizadas você pode compilar o projeto
 mbed compile -m DISCO_F746NG -t GCC_ARM
 ```
 
+# Executando
+
 Agora que a compilação completou, você pode implementar o binario na placa STM32F7 e testar para ver se funciona.
 
-Conecte a placa STM32F7 via USB. A placa deve aparecer na sua maquina como o espaço de disco. Copie o arquivo binário criado com o último comando para dentro da pasta da placa. O binário está em `/BUILD/DISCO_F746NG/GCC_ARM/`. Ou utilize o seguinte comando
+Conecte a placa STM32F7 via USB. A placa deve aparecer na sua máquina como o espaço de disco. Copie o arquivo binário criado com o último comando para dentro da pasta da placa. O binário está em `/BUILD/DISCO_F746NG/GCC_ARM/`. Ou utilize o seguinte comando
 
 ```bash
 cp ./BUILD/DISCO_F746NG/GCC_ARM/mbed.bin /Volumes/DIS_F746NG/
