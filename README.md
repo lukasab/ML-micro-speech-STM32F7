@@ -105,7 +105,7 @@ pyenv local 2.7.16
 Instale pipenv com:
 
 ```bash
-sudo apt install pipenv
+pip install pipenv
 ```
 
 Verifique que pipenv foi instalado corretamente com
