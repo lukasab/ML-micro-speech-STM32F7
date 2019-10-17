@@ -57,12 +57,15 @@ echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bash_profile
 echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
 ```
 
-Caso vc use _Zsh_, troque `~/.bash_profile` por `~/.zshenv`
+Caso você use _Zsh_, troque `~/.bash_profile` por `~/.zshenv`
+Caso você use Ubuntu, troque `~/.bash_profile` por `~/.bashrc`
 
 Adicione o `pyenv init` para o _Shell_ com:
 ```bash
 echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bash_profile
 ```
+Caso você use _Zsh_, troque `~/.bash_profile` por `~/.zshenv`
+Caso você use Ubuntu, troque `~/.bash_profile` por `~/.bashrc`
 
 Reinicie o _Shell_ para aplicar as modificações com:
 
