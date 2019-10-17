@@ -140,7 +140,7 @@ pip install mbed-cli
 Para verificar que Mbed CLI instalou corretamente, run
 
 ```bash
-mbed --help.
+mbed --help
 ```
 
 ### Baixar o compilador
