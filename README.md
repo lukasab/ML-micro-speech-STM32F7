@@ -119,8 +119,7 @@ O comando deve ser reconhecido respondendo com algo parecido a: `pipenv, version
 Ainda dentro da pasta `C106` execute para criar e ativar um ambiente virtual:
 
 ```bash
-pipenv shell
-pipenv install
+pipenv install && pipenv shell
 ```
 
 Verifique que a versão do python está correta executando:
