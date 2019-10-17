@@ -34,7 +34,7 @@ git config --global user.name "Seu Nome completo"
 ```
 
 ```bash
-git config --global user.email "seu.email@gmail.com
+git config --global user.email "seu.email@gmail.com"
 ```
 
 ## Mercurial
