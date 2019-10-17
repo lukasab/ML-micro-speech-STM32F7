@@ -154,15 +154,15 @@ tar xjf ~/Downloads/gcc-arm-none-eabi-8-2019-q3-update-linux.tar.bz2 -C ~/
 
 Talvez a versão baixada mude e portanto o nome do arquivo também. Verifique antes de rodar o comando a cima.
 
-Coloque o compilado no PATH com:
-$ 
-$ 
+Coloque o compilado no PATH com: 
+ 
 ```bash
 echo 'export PATH="$PATH:~/gcc-arm-none-eabi-8-2019-q3-update/bin"' >> ~/.bash_profile
 exec "$SHELL"
 ```
 
 Caso você use _Zsh_, troque `~/.bash_profile` por `~/.zshenv`
+Caso você use Ubunto, troque `~/.bash_profile` por `~/.bashrc`
 
 Verifique que tudo está funcionando corretamente utilizando o comando abaixo:
 
