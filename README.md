@@ -162,6 +162,7 @@ exec "$SHELL"
 ```
 
 Caso você use _Zsh_, troque `~/.bash_profile` por `~/.zshenv`
+
 Caso você use Ubunto, troque `~/.bash_profile` por `~/.bashrc`
 
 Verifique que tudo está funcionando corretamente utilizando o comando abaixo:
@@ -203,7 +204,7 @@ make -f tensorflow/lite/experimental/micro/tools/make/Makefile TARGET=mbed TAGS=
 
 Isso vai criar uma pasta em `tensorflow/lite/experimental/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed` contendo o código fonte, os arquivos header, os driver Mbed e um README.
 
-No arquivo README há descrições de arquivos interessantes:
+Segue abaixo as descrições de alguns arquivos interessantes:
 
 - `disco_f746ng/audio_provider.cc` adquire a amostra de áudio do microfone interno.
 - `micro_features/micro_features_generator.cc` usa a transformada rápida de Fourier para criar um espectograma do áudio.
