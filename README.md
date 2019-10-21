@@ -58,6 +58,7 @@ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
 ```
 
 Caso você use _Zsh_, troque `~/.bash_profile` por `~/.zshenv`
+
 Caso você use Ubuntu, troque `~/.bash_profile` por `~/.bashrc`
 
 Adicione o `pyenv init` para o _Shell_ com:
@@ -65,6 +66,7 @@ Adicione o `pyenv init` para o _Shell_ com:
 echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bash_profile
 ```
 Caso você use _Zsh_, troque `~/.bash_profile` por `~/.zshenv`
+
 Caso você use Ubuntu, troque `~/.bash_profile` por `~/.bashrc`
 
 Reinicie o _Shell_ para aplicar as modificações com:
@@ -94,7 +96,7 @@ mkdir C106
 cd C106
 ```
 
-Defina versão do python instala como a padrão para está pasta com:
+Defina a versão do python instalada como a padrão para esta pasta com:
 
 ```bash
 pyenv local 2.7.16
@@ -108,7 +110,7 @@ Instale pipenv com:
 pip install pipenv
 ```
 
-Verifique que pipenv foi instalado corretamente com
+Verifique se pipenv foi instalado corretamente com
 
 ```bash
 pipenv --version
